@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '@/views/Login.vue'
+import RegisterUser from '@/views/RegisterUser.vue'
+import PickGym from '@/views/PickGym.vue'
 
 Vue.use(VueRouter)
 
@@ -9,6 +11,17 @@ const routes = [
     path: '/',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: RegisterUser
+  },
+  {
+    path: '/dashboard/:clientId/pick-gym',
+    name: 'PickGym',
+    component: PickGym,
+    props: true
   }
 ]
 
