@@ -251,16 +251,16 @@ methods: {
       this.alertSignIn.txt = "Algum erro aconteceu, tente novamente mais tarde!"
       this.alertSignIn.variant = "danger"
       this.alertSignIn.status = true
-      window.scroll({
-        top: 0,
-        behavior: 'smooth'
-      })
     }
 
     this.loader.visible = false
     this.bRegister.text = "Cadastrar"
     this.bRegister.disabled = false
     this.$emit("update:isSigning",false)
+    window.scroll({
+      top: 0,
+      behavior: 'smooth'
+    })
   },
   formatUsername() {
     var slug = this.form.username

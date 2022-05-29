@@ -19,13 +19,13 @@ const routes = [
     component: RegisterUser
   },
   {
-    path: '/:clientId/pick-gym',
+    path: '/:studentId/pick-gym',
     name: 'PickGym',
     component: PickGym,
     props: true
   },
   {
-    path: '/:clientId/:gymId/dashboard',
+    path: '/:studentId/:slug/dashboard',
     name: 'Dashboard',
     component: Dashboard,
     props: true

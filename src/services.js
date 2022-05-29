@@ -40,5 +40,8 @@ export const api = {
   },
   login(body) {
     return axiosInstance.post('/user/login',body)
+  },
+  getUserGyms(clientId) {
+    return axiosInstance.get(`/user/${clientId}/gyms/`)
   }
 };
