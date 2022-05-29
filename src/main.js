@@ -9,7 +9,12 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-
+import {api} from '@/services.js'
+import {methods} from '@/js/Helpers.js'
+Vue.prototype.$api = api
+Vue.mixin({
+  methods
+})
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin

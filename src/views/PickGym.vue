@@ -60,6 +60,7 @@ data() {
 @import '@/assets/scss/responsive.scss';
 #containerPickGym {
     padding: 50px 0;
+    color: #fff;
     .pickTitle {
     font-weight: bold;
     font-size: 1.75rem;

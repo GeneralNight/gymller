@@ -18,6 +18,7 @@ name: 'HeaderPage'
 <style lang="scss" scoped>
 @import '@/assets/scss/responsive.scss';
 .containerHeader {
+    color: #fff;
     padding: 20px 50px;
     background: #333333;
     box-shadow: 0 0 5px rgba(0,0,0,0.5);

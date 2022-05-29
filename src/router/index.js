@@ -25,7 +25,7 @@ const routes = [
     props: true
   },
   {
-    path: '/:clientId/dashboard',
+    path: '/:clientId/:gymId/dashboard',
     name: 'Dashboard',
     component: Dashboard,
     props: true

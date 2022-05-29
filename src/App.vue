@@ -6,10 +6,12 @@
 </template>
 
 <style lang="scss">
-*:not(i) {
-  font-family: 'Open Sans' ;
-  color: #fff ;
-}
+@import '@/assets/scss/responsive.scss';
+
+// *:not(i) {
+//   font-family: 'Open Sans' ;
+//   color: #fff ;
+// }
 
 
 body 
@@ -25,15 +27,44 @@ margin: 0 auto;
 
 
 .cover{
-  position:fixed;
-  top: 0;
-  left: 0;
+  background:rgba(34,34,34,.8);
   width: 100vw;
   height: 100vh;
-  background:rgba(34,34,34,.9);
+  position: fixed;
   z-index: -1;
+  top: 0;
+  left: 0;
 }
 
+.bPattern {
+  border: 2px solid #00ca8d;
+  border-radius: 32px;
+  background: none;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  transition: .2s;
+  padding: 3px 20px 3px 20px;
+
+  &:not(.withIcon) {
+    padding: 3px 30px;
+  }
+
+  &:hover {
+    background: #00ca8d;
+  }
+
+  &:disabled {
+    opacity: .8;
+    background: #444444;
+    border-color: #444444;
+    cursor: not-allowed;
+  }
+
+  @include d(xs) {
+    font-size: 1.15rem;
+  }
+}
 
 }
 </style>

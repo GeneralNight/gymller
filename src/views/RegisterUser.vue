@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col">
                     <div class="d-flex justify-content-sm-end">
-                        <button :class="{'disButton': isSigning}" class="bBack" @click.prevent="goTo('/')"><i class="fas fa-chevron-left mr-2"></i> Voltar</button>
+                        <button :class="{'disButton': isSigning}" class="bPattern withIcon" @click.prevent="goTo('/')"><i class="fas fa-reply mr-2"></i> Voltar</button>
                     </div>
                     <div class="d-flex align-items-center flex-column flex-sm-row">
                         <img src="@/assets/img/Logo.png" alt="" class="imgLogo">
@@ -45,8 +45,9 @@ methods: {
 
 <style lang="scss" scoped>
     @import '@/assets/scss/responsive.scss';
-
+    
     #containerRegisterUser {
+        color: #fff;
         padding: 50px 0;
 
         @include d(sm) {
