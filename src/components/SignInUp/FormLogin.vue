@@ -59,12 +59,12 @@ export default {
                 this.$router.push(route)
             }
         },
-        makeLogin(){
+        async makeLogin(){
             this.alertLogin.status = false
             this.bSubmit.disabled = true
             this.bSubmit.text = "Entrando"
 
-            this.$api.login(this.form).then(res=> {
+            await this.$api.login(this.form).then(res=> {
                 if(res.data.me) {                    
                     this.$store.commit('SET_ME',res.data.me)
                     this.$router.push(`/${res.data.me.id}/pick-gym`)

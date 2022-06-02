@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header/>
+        <Header :clientId="studentId"/>
         <section id="containerPickGym">
             <div class="container">
                 <div class="row">

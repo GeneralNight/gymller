@@ -56,7 +56,7 @@ export const methods = {
         hideGroupingSeparatorOnFocus:false
     }
     },
-    makeToast(variant = null,msg) {
+    makeToast(variant = variant ? variant : null,msg) {
       this.$bvToast.toast(`${msg}`, {
         title: `Aviso`,
         variant: variant,

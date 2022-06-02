@@ -1,6 +1,6 @@
 <template>
   <div>
-      <Header/>
+      <Header :clientId="studentId" :slug="slug"/>
       <section id="containerWorkoutList">
           <div class="container">
               <div class="row">
@@ -13,7 +13,7 @@
                                     <p class="workoutName">{{workout.name}}</p>
                                     <p class="workoutExercises">{{workout.exercises.length}} Exercícios</p>
                                     <p class="workoutLast">Última excecução: {{new Date(workout.lastExecution).toLocaleDateString('pt-BR')}}</p>
-                                    <button class="bSelect w-100">Selecionar</button>
+                                    <button @click.prevent="selectThisExercise(workout)" class="bSelect w-100">Selecionar</button>
                                 </div>
                             </div>
                         </div>
@@ -29,6 +29,7 @@
 import Header from '@/components/Header.vue'
 export default {
 name: 'DashboardPage',
+props:['slug','studentId'],
 components: {
     Header
 },
@@ -82,6 +83,12 @@ data() {
             }
         ]
     }
+},
+methods: {
+    /* eslint-disable */
+    selectThisExercise(workout) {
+        this.$router.push(`/${this.studentId}/${this.slug}/dashboard/training-sheet/${workout.id}`)
+    }
 }
 }
 </script>
@@ -89,6 +96,7 @@ data() {
 <style lang="scss" scoped>
 @import '@/assets/scss/responsive.scss';
 #containerWorkoutList {
+    color: #fff;
     padding: 50px 0;
     .workoutListTitle {
         font-weight: bold;

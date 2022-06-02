@@ -1,46 +1,66 @@
 <template>
-  <header class="containerHeader">
-      <div class="d-flex align-items-center justify-content-between">
-        <div class="d-flex align-items-center">
-            <img class="logo" src="@/assets/img/Logo.png" alt="Logo">
-            <h1 class="sysTitle mb-0">Gymller</h1>
+    <header id="containerHeader">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="containerSysName d-flex align-items-center">
+                            <img src="@/assets/img/Logo.png" alt="Logo" class="logo">
+                            <p class="sysName mb-0">Gymller</p>
+                        </div>
+                        <button class="bPattern withIcon d-flex align-items-center" v-b-toggle.sidebarMenu><i class="fas fa-bars mr-sm-2 mr-md-3"></i><span class="d-none d-sm-block">Menu</span></button>
+                    </div>
+                    <SideBarMenu :clientId="clientId" :slug="slug"/>
+                </div>
+            </div>
         </div>
-      </div>
-  </header>
+    </header>
 </template>
 
 <script>
+import SideBarMenu from '@/components/SideBarMenu.vue'
 export default {
-name: 'HeaderPage'
+name: 'MenuSite',
+props:["slug","clientId"],
+components: {
+    /* eslint-disable */
+    SideBarMenu
+}
 }
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/responsive.scss';
-.containerHeader {
-    color: #fff;
+#containerHeader {
+    background: #434343;
+    box-shadow: 0 2px 5px rgba(0,0,0,.5);
     padding: 20px 50px;
-    background: #333333;
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
-    @include d(xs) {
+    border-radius: 0 0 5px 5px;
+
+    @include d(sm) {
         padding: 20px 15px;
     }
-    .sysTitle {
-        font-weight: bold;
-        font-size: 2rem;
-        @include d(md) {
-            font-size: 1.75rem;
-        }
+
+    @include d(xs) {
+        padding: 20px 0px;
+    }
+
+    .logo {
+        max-width: 100px;
         @include d(xs) {
-            font-size: 1.5rem;
+            max-width: 80px;
         }
     }
-    .logo {
-        margin-right: 20px;
-        max-width: 100px;
-        width: 100%;
+
+    .sysName {
+        color: #fff;
+        font-size: 2rem;
+        margin-left: 25px;
+        font-weight: 700;
+
         @include d(xs) {
-          max-width: 80px;
+            font-size: 1.5rem;
+            margin-left: 15px;
         }
     }
 }
